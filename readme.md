@@ -17,7 +17,7 @@
 
 - Run the project server using the following commands: 
 
-``` python manage.py runserver```
+``` $ python manage.py runserver```
 
 - Go to the browser and launch ``` http://127.0.0.1:8000/admin ```
 
