@@ -2,7 +2,6 @@
 
 - Create a new database and change the connection parameters in ``` SmartSchoolProject/setting.py```
 - Run Database migrations:
-``` $ cd SmartSchoollProject/ ```
 
 ``` $ python manage.py makemigrations ```
 
