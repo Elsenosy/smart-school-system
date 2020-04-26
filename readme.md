@@ -1,5 +1,5 @@
 ## Requirements
-- Dajngo 
+- Django 
 
     ``` $ pip install Django ``` 
 
