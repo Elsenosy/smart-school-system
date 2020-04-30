@@ -23,3 +23,11 @@ class UserSerializer(serializers.ModelSerializer):
         token = Token.objects.create(user=user)
 
         return user
+
+    def get_fields(self, *args, **kwargs):
+        fields = super(UserSerializer, self).get_fields(*args, **kwargs)
+        request = self.context.get('request', None)
+        if request and getattr(request, 'method', None) == "PUT":
+            fields['username'].required = False
+            fields['password'].required = False
+        return fields

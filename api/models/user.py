@@ -3,11 +3,12 @@ import datetime
 from django.contrib.auth.models import AbstractUser
 from api.models import Stage 
 from api.models import Category 
+from django.conf import settings
 
 # define an path to upload image to
 def user_directory_path(instance, filename): 
     # file will be uploaded to MEDIA_ROOT / user_<id>/<filename> 
-    return '{0}/user_{1}/{2}'.format(settings.MEDIA_ROOT, instance.user.id, filename) 
+    return '{0}/user_{1}/{2}'.format(settings.MEDIA_ROOT, instance.id, filename) 
 
 # Create your models here.
 class User(AbstractUser):

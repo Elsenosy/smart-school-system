@@ -5,7 +5,7 @@ from .viewsets import UserViewSet, UserCreate, \
                 SubjectViewSet, QuestionnairViewSet, \
                 QanswerViewSet
 
-from .apiviews import LoginView, UserCreate
+from .apiviews import LoginView, UserSubjects
 
 from . import views 
 
@@ -20,7 +20,7 @@ router.register('qanswers',      QanswerViewSet)
 
 urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
-    path('users/create/', UserCreate.as_view())
+    path("users/<int:pk>/subjects/", UserSubjects.as_view(), name="student_subjects"),
 ]
 
 urlpatterns += router.urls
