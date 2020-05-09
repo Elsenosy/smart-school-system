@@ -1,9 +1,10 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .viewsets import UserViewSet, UserCreate, \
+from api.viewsets import UserViewSet, UserCreate, \
                 StageViewSet, CategoryViewSet, \
                 SubjectViewSet, QuestionnairViewSet, \
                 QanswerViewSet
+from api.viewsets.material import MaterialViewSet
 
 from .apiviews import LoginView, UserSubjects
 
@@ -17,6 +18,7 @@ router.register('categorys',     CategoryViewSet)
 router.register('subjects',      SubjectViewSet)
 router.register('questionnairs', QuestionnairViewSet)
 router.register('qanswers',      QanswerViewSet)
+router.register('material',      MaterialViewSet)
 
 urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
