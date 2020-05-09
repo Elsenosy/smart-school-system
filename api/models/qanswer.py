@@ -1,6 +1,6 @@
 from django.db import models
-from . import Questionnair 
+from api.models.questionnair import Questionnair
 
 class Qanswer(models.Model):
-    question = models.TextField()
+    question 	 = models.TextField()
     questionnair = models.ForeignKey(Questionnair, on_delete=models.CASCADE)

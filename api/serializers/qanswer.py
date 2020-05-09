@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Qanswer
+from api.models.qanswer import Qanswer
 
 class QanswerSerializer(serializers.ModelSerializer):
     class Meta:

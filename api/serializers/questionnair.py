@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Questionnair
+from api.models.questionnair import Questionnair
 
 class QuestionnairSerializer(serializers.ModelSerializer):
     class Meta:

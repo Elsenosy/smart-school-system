@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Stage
+from api.models.stage import Stage
 
 class StageSerializer(serializers.ModelSerializer):
     class Meta:
