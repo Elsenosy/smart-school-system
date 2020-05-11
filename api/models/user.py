@@ -26,7 +26,7 @@ class User(AbstractUser):
     phone               = models.CharField(max_length=30, blank=True)
     birth_date          = models.DateField(verbose_name="Birth date", blank=True, default=datetime.date.today, null=True)
     user_type           = models.CharField(max_length=4, choices=USER_TYPES, blank=True)
-    picture             = models.ImageField(upload_to = user_directory_path, null=True)
+    # picture             = models.ImageField(upload_to = user_directory_path, null=True)
     hire_date           = models.DateField(verbose_name="Hire date", blank=True, default=datetime.date.today, null=True)
     job                 = models.CharField(max_length=100, blank=True, null=True)
     stage               = models.ForeignKey(Stage, on_delete=models.CASCADE, null=True)
