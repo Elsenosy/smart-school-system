@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     # Specific code for creating user, to generate token for each user
     def create(self, validated_data):
-        picture     = validated_data['picture']
+        # picture     = validated_data['picture']
         hire_date   = validated_data['hire_date']
         job         = validated_data['job']
         stage       = validated_data['stage']
@@ -25,7 +25,7 @@ class UserSerializer(serializers.ModelSerializer):
             address=validated_data['address'],
             phone=validated_data['phone'],
             birth_date=validated_data['birth_date'],
-            picture=picture,
+            # picture=picture,
             hire_date=hire_date,
             job=job,
             stage=stage,
