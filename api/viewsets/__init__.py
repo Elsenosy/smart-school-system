@@ -5,3 +5,7 @@ from .category import CategoryViewSet
 from .subject import SubjectViewSet
 from .questionnair import QuestionnairViewSet
 from .qanswer import QanswerViewSet
+from .material import MaterialViewSet
+from .exam import ExamViewSet
+from .examquestion import ExamQuestionViewSet
+from .questionanswer import ExamQuestionAnswerViewSet
