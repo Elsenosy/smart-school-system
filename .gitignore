@@ -58,5 +58,8 @@ docs/_build/
 # PyBuilder
 target/
 
-# setting 
+.vscode/settings.json
+SmartSchoolProject/__init__.py
+SmartSchoolProject/settings.py
+SmartSchoolProject/__init__.py
 SmartSchoolProject/settings.py
