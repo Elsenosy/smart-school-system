@@ -4,3 +4,7 @@ from .subject import Subject
 from .user import User
 from .questionnair import Questionnair
 from .qanswer import Qanswer
+from .exam import Exam 
+from .examquestion import ExamQuestion
+from .questionanswer import ExamQuestionAnswer
+from .material import Material

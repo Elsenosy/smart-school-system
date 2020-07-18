@@ -12,9 +12,13 @@ class LoginView(APIView):
         user = authenticate(username=username, password=password)
         user_serialize = serializers.serialize('python', [user], ensure_ascii=False)
 
+        # Pop password from user's data
+        user_data = user_serialize[0].get('fields')
+        user_data.pop('password')
+
         if user:
             result = {
-                "user": user_serialize[0].get('fields'), 
+                "user": user_data, 
                 "token": user.auth_token.key,
             }
             return Response({"result": result})
