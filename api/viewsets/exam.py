@@ -10,27 +10,6 @@ from rest_framework.decorators import action
 class ExamViewSet(viewsets.ModelViewSet):
     queryset         = Exam.objects.all()
     serializer_class = ExamSerializer
-    
-    def list(self, request):
-        data = list()
-        # Get only exam data 
-        for x in self.serializer_class.data:
-            data.append(
-                {
-                    "id": x.get('id'),
-                    "title": x.get('title'),
-                    "duration": x.get('duration'),
-                    "mark": x.get('mark'),
-                    "notes": x.get('notes')
-                }
-            )
-
-        repsonse = {
-            "status": True,
-            "payload": data
-        }
-
-        return Response(repsonse)
 
     def retrieve(self, request, pk=None):
         exam = get_object_or_404(self.queryset, pk=pk)
@@ -42,12 +21,12 @@ class ExamViewSet(viewsets.ModelViewSet):
             "notes": exam.notes
         }
 
-        repsonse = {
+        response = {
             "status": True,
             "payload": data
         }
 
-        return Response(repsonse)
+        return Response(response)
     
     @action(detail=True, methods=['post'])
     def addQuestions(self, request, pk=None):
@@ -69,3 +48,7 @@ class ExamViewSet(viewsets.ModelViewSet):
             else:
                 return Response(newQ.errors, status=status.HTTP_400_BAD_REQUEST)
         return Response(questions)
+        
+    @action(detail=True, methods=['get'])
+    def examsLookup(self):
+        return Response(self.queryset)

@@ -25,12 +25,14 @@ router.register('questionnairs', QuestionnairViewSet)
 router.register('qanswers',      QanswerViewSet)
 router.register('materials',     MaterialViewSet)
 router.register('exams',         ExamViewSet)
-router.register('materials',     ExamQuestionViewSet)
+router.register('examquestion',  ExamQuestionViewSet)
 
 urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
     path("users/<int:pk>/subjects/", UserSubjects.as_view(), name="student_subjects"),
-    path("exams/{pk}/addQuestions", ExamViewSet.as_view({'post', 'addQuestions'}))
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+    path("exams/{pk}/addQuestions", ExamViewSet.as_view({'post', 'addQuestions'})),
+    path("exams/lookup", views.testTaha)
+]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += router.urls
