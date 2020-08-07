@@ -31,7 +31,10 @@ urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
     path("users/<int:pk>/subjects/", UserSubjects.as_view(), name="student_subjects"),
     path("exams/{pk}/addQuestions", ExamViewSet.as_view({'post', 'addQuestions'})),
-    path("exams/lookup", views.testTaha)
+    path("exams/lookup", views.examsLookup),
+    path("exams/<int:id>/questions", views.getExamQuestions),
+    path("exams/questions/<int:id>/answer", views.addAnswerForQuestion),
+    path("subjects/<int:id>/materials", views.getSubjectMaterials)
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
