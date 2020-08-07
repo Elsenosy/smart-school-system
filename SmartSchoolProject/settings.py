@@ -26,7 +26,7 @@ SECRET_KEY = '7635C90690A2Ff1F1179716C0Dc70E13C2501C9D014F0C86'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['smart-school-project.herokuapp.com', 'www.smart-school-project.herokuapp.com']
 
 
 REST_FRAMEWORK = {
