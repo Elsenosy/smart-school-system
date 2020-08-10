@@ -19,6 +19,7 @@ class LoginView(APIView):
         if user:
             result = {
                 "user": user_data, 
+                "id": user_serialize[0].get('pk'), 
                 "token": user.auth_token.key,
             }
             return Response({"result": result})
