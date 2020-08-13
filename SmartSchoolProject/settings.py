@@ -145,7 +145,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, "SmartSchoolProject", "media")
 STATICFILES_DIR = [
     os.path.join(BASE_DIR,'static'),
-    os.path.join(BASE_DIR, "SmartSchoolProject", "media"),
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
